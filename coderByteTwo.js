@@ -22,5 +22,25 @@ function FindIntersection(strArr) {
        
        }
      
-  
   console.log(FindIntersection(readline()));
+
+  //map ve foreach ile çözüm
+
+  function Find(strArr) {
+    strArr=[str1,str2]
+    const lists=strArr.map(str =>str.split(","))
+    const firstList=lists[0]
+    const secondList=lists[1]
+    let matchMap={}
+    let resultArr=[]
+
+    firstList.forEach(num =>matchMap[num]=true) 
+    secondList.forEach(num => {
+      if (matchMap[num]) {
+        resultArr.push(num)
+      }
+    })
+    return strArr
+      
+  }
+  console.log(Find(readline()));
